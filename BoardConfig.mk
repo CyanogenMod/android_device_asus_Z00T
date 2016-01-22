@@ -27,5 +27,8 @@ TARGET_OTA_ASSERT_DEVICE := Z00T
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1157627904
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 5912772608
 
+# Properties
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+
 # inherit from the proprietary version
 -include vendor/asus/Z00T/BoardConfigVendor.mk
