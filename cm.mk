@@ -5,7 +5,6 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 PRODUCT_NAME := cm_Z00T
 PRODUCT_BRAND := asus
-PRODUCT_MODEL := ASUS_Z00TD
 PRODUCT_MANUFACTURER := asus
 PRODUCT_DEVICE := Z00T
 

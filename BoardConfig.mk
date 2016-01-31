@@ -33,5 +33,10 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 27426520064 # 27426536448 - 16384
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
+# Vendor Unification Init
+TARGET_UNIFIED_DEVICE := true
+TARGET_INIT_VENDOR_LIB := libinit_msm
+TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_Z00T.cpp
+
 # inherit from the proprietary version
 -include vendor/asus/Z00T/BoardConfigVendor.mk
