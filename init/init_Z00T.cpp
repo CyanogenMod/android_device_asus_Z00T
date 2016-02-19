@@ -56,8 +56,11 @@ void init_msm_properties(unsigned long msm_id , unsigned long msm_ver, char *boa
     fgets(PRJ_ID, sizeof(PRJ_ID), fp);
     pclose(fp);
 
-    if (strstr(PRJ_ID, "PRJ_ID=3"))
+    if (strstr(PRJ_ID, "PRJ_ID=3")) {
+        property_set("ro.build.product", "Z00U");
         property_set("ro.product.model", "ASUS_Z00UD");
-    else
+    } else {
+        property_set("ro.build.product", "Z00T");
         property_set("ro.product.model", "ASUS_Z00TD");
+    }
 }
