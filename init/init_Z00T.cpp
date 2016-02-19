@@ -59,8 +59,14 @@ void init_msm_properties(unsigned long msm_id , unsigned long msm_ver, char *boa
     if (strstr(PRJ_ID, "PRJ_ID=3")) {
         property_set("ro.build.product", "Z00U");
         property_set("ro.product.model", "ASUS_Z00UD");
+        property_set("ro.product.device", "ASUS_Z00U");
+        property_set("ro.build.description", "Z00U-user 5.0.2 LRX22G WW_user_1.16.40.763_20151201 release-keys");
+        property_set("ro.build.fingerprint", "asus/WW_Z00U/ASUS_Z00U:5.0.2/LRX22G/WW_user_1.16.40.763_20151201:user/release-keys");
     } else {
         property_set("ro.build.product", "Z00T");
         property_set("ro.product.model", "ASUS_Z00TD");
+        property_set("ro.product.device", "ASUS_Z00T");
+        property_set("ro.build.description", "Z00T-user 5.0.2 LRX22G WW_user_1.16.40.763_20151201 release-keys");
+        property_set("ro.build.fingerprint", "asus/WW_Z00T/ASUS_Z00T:5.0.2/LRX22G/WW_user_1.16.40.763_20151201:user/release-keys");
     }
 }
