@@ -1,4 +1,4 @@
-Unified Device Tree for Asus Zenfone 2 Laser/Selfie (1080p)
+Unified Device Tree for Asus Zenfone 2 Laser/Selfie/Zoom (1080p)
 ===========================================
 
 Basic   | Spec Sheet
