@@ -48,27 +48,43 @@ void init_msm_properties(unsigned long msm_id , unsigned long msm_ver, char *boa
     UNUSED(msm_ver);
     UNUSED(board_type);
 
-    rc = property_get("ro.board.platform", platform);
-    if (!rc || !ISMATCH(platform, ANDROID_TARGET))
+    rc = property_get("ro.cm.device", device);
+    if (!rc || !ISMATCH(device, "Z00T"))
         return;
 
     FILE *fp = fopen("/proc/apid" , "r");
     fgets(PRJ_ID, sizeof(PRJ_ID), fp);
     pclose(fp);
 
-    if (ISMATCH(PRJ_ID, "3\n")) {
-        property_set("ro.build.product", "Z00T");
-        property_set("ro.product.model", "ASUS_Z00UD");
-        property_set("ro.product.device", "ASUS_Z00U");
-        property_set("ro.product.carrier", "US-ASUS_Z00U-WW_Z00U");
-        property_set("ro.build.description", "Z00T-user 5.0.2 LRX22G WW_user_1.17.40.1234_20160304 release-keys");
-        property_set("ro.build.fingerprint", "asus/WW_Z00U/ASUS_Z00U_1:5.0.2/LRX22G/WW_user_1.17.40.1234_20160304:user/release-keys");
-    } else {
-        property_set("ro.build.product", "Z00T");
+    // Common properties
+    property_set("ro.build.product", "Z00T");
+    property_set("ro.build.description", "Z00T-user 5.0.2 LRX22G WW_user_1.17.40.1234_20160304 release-keys");
+
+    if (ISMATCH(PRJ_ID, "0\n")) {
+        // ZE551KL
         property_set("ro.product.model", "ASUS_Z00TD");
         property_set("ro.product.device", "ASUS_Z00T");
         property_set("ro.product.carrier", "US-ASUS_Z00T-WW_Z00T");
-        property_set("ro.build.description", "Z00T-user 5.0.2 LRX22G WW_user_1.17.40.1234_20160304 release-keys");
-        property_set("ro.build.fingerprint", "asus/WW_Z00T/ASUS_Z00T:5.0.2/LRX22G/WW_user_1.17.40.1234_20160304:user/release-keys");
+        property_set("ro.build.fingerprint", "asus/WW_Z00C/ASUS_Z00C:5.0.2/LRX22G/WW_user_1.17.40.1234_20160304:user/release-keys");
+    } else if (ISMATCH(PRJ_ID, "1\n")) {
+        // ZE660KL
+        property_set("ro.product.model", "ASUS_Z011D");
+        property_set("ro.product.device", "ASUS_Z011D");
+        property_set("ro.product.carrier", "US-ASUS_Z011-WW_Z011");
+        property_set("ro.build.fingerprint", "asus/WW_Z011/ASUS_Z011:5.0.2/LRX22G/WW_user_1.17.40.1234_20160304:user/release-keys");
+    } else if (ISMATCH(PRJ_ID, "2\n")) {
+        // ZX551KL
+        property_set("ro.product.model", "ASUS_Z00CD");
+        property_set("ro.product.device", "ASUS_Z00C");
+        property_set("ro.product.carrier", "US-ASUS_Z00C-WW_Z00C");
+        property_set("ro.build.fingerprint", "asus/WW_Z00C/ASUS_Z00C:5.0.2/LRX22G/WW_user_1.17.40.1234_20160304:user/release-keys");
+    } else if (ISMATCH(PRJ_ID, "3\n")) {
+        // ZD551KL
+        property_set("ro.product.model", "ASUS_Z00UD");
+        property_set("ro.product.device", "ASUS_Z00U");
+        property_set("ro.product.carrier", "US-ASUS_Z00U-WW_Z00U");
+        property_set("ro.build.fingerprint", "asus/WW_Z00U/ASUS_Z00U_1:5.0.2/LRX22G/WW_user_1.17.40.1234_20160304:user/release-keys");
+    } else {
+        // Unknown
     }
 }
