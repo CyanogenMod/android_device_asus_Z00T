@@ -72,7 +72,7 @@ void init_msm_properties(unsigned long msm_id , unsigned long msm_ver, char *boa
         /* ZE601KL */
         property_set("ro.product.name", "WW_Z011");
         property_set("ro.product.model", "ASUS_Z011D");
-        property_set("ro.product.device", "ASUS_Z011D");
+        property_set("ro.product.device", "ASUS_Z011");
         property_set("ro.product.carrier", "US-ASUS_Z011-WW_Z011");
         property_set("ro.build.fingerprint", "asus/WW_Z011/ASUS_Z011:5.0.2/LRX22G/WW_user_1.17.40.1234_20160304:user/release-keys");
     } else if (ISMATCH(PRJ_ID, "2\n")) {
