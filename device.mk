@@ -17,8 +17,6 @@
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/asus/Z00T/Z00T-vendor.mk)
 
-$(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
-
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
